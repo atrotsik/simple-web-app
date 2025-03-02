@@ -2,7 +2,7 @@
 
 ## clone repository
 ```
-git clone
+git clone https://github.com/atrotsik/simple-web-app.git
 ```
 
 ## install docker if needed for ubuntu

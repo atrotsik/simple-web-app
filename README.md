@@ -1,12 +1,14 @@
 # simple-web-app
 
 ## clone repository
-git clone
+`git clone
 
 ## install docker if needed for ubuntu
-./docker.sh
+`./docker.sh
 
 ## start app 
 
+
 ## goto app webpage http://{ip address}:5005 to run scripts
+http://{ip address}:5005
 

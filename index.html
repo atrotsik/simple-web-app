@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shell Script Executor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+        }
+        .output_err {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shell Script Executor</h1>
+        <p>Click the button below to execute the shell script:</p>
+        <button onclick="runScript()">Run Script</button>
+
+        <div class="output" id="output">
+            <!-- Output will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        async function runScript() {
+            const outputDiv = document.getElementById('output');
+            outputDiv.textContent = 'Executing script...';
+
+            try {
+                // Send a GET request to the Flask backend
+                const response = await fetch('http://localhost:5005/script');
+                const data = await response.json();
+
+                // Display the result
+                if (response.status === 200) {
+                    outputDiv.innerHTML = `<span class="success">Success, Response 200:</span>\n${data.output}`;
+                } else if (response.status === 500){
+                    outputDiv.innerHTML = `<span class="error">Error, Response 500:</span>\n${data.output}`;
+                }
+            } catch (error) {
+                outputDiv.innerHTML = `<span class="error">Error:</span>\n${error.message}`;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <h1>Err Shell Script Executor</h1>
+        <p>Click the button below to execute the Error shell script:</p>
+        <button onclick="runErrScript()">Run Script</button>
+
+        <div class="output_err" id="output_err">
+            <!-- Output will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        async function runErrScript() {
+            const outputDiv = document.getElementById('output_err');
+            outputDiv.textContent = 'Executing script...';
+
+            try {
+                // Send a GET request to the Flask backend
+                const response = await fetch('http://localhost:5005/script-err');
+                const data = await response.json();
+
+                // Display the result
+                if (response.status === 200) {
+                    outputDiv.innerHTML = `<span class="success">Success, Response 200:</span>\n"response.status"response.status\n${data.output}`;
+                } else if (response.status === 500){
+                    outputDiv.innerHTML = `<span class="error">Error, Response 500:</span>\n${data.output}`;
+                }
+            } catch (error) {
+                outputDiv.innerHTML = `<span class="error">Error:</span>\n${error.message}`;
+            }
+        }
+    </script>
+
+</body>
+</html>

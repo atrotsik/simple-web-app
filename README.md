@@ -11,8 +11,10 @@ git clone https://github.com/atrotsik/simple-web-app.git
 ```
 
 ## start app 
+```
+./build.sh
+```
 
-
-## goto app webpage http://{ip address}:5005 to run scripts
-http://localhost:5005
+## goto app webpage http://{public ip address} to run scripts
+http://158.160.151.194
 

@@ -58,7 +58,7 @@
 
             try {
                 // Send a GET request to the Flask backend
-                const response = await fetch('http://127.0.0.1:5005/script');
+                const response = await fetch('/script');
                 const data = await response.json();
 
                 // Display the result
@@ -90,7 +90,7 @@
 
             try {
                 // Send a GET request to the Flask backend
-                const response = await fetch('http://127.0.0.1:5005/script-err');
+                const response = await fetch('/script-err');
                 const data = await response.json();
 
                 // Display the result

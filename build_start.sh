@@ -1,3 +1,4 @@
+docker rm webapp
 docker build . -t webapp
 docker tag webapp cr.yandex/crppkeb0hbjp6i480150/webapp:latest
 docker push cr.yandex/crppkeb0hbjp6i480150/webapp:latest

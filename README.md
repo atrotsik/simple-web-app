@@ -8,7 +8,7 @@ cd simple-web-app
 
 ## build and start app 
 ```
-./build_start.sh
+sudo ./build_start.sh
 ```
 
 ## goto app webpage http://{public ip address} to run scripts

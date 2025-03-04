@@ -3,14 +3,10 @@
 ## clone repository
 ```
 git clone https://github.com/atrotsik/simple-web-app.git
+cd simple-web-app
 ```
 
-## install docker if needed for ubuntu
-```
-./docker.sh
-```
-
-## start app 
+## build and start app 
 ```
 ./build.sh
 ```

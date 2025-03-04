@@ -12,7 +12,7 @@ git clone https://github.com/atrotsik/simple-web-app.git
 cd simple-web-app
 ```
 
-## Запустить скрипт билда имиджа и копирования в приватны registry YC
+## Запустить скрипт билда имиджа и копирования в приватный registry YC
 ```
 ./build_start.sh
 ```

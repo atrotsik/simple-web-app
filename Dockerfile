@@ -22,4 +22,4 @@ COPY . .
 EXPOSE 5005
 
 # Запускаем приложение
-CMD ["python", "app.py"]
+CMD ["python3", "app.py"]
